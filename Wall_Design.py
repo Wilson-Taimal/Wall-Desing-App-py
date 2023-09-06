@@ -233,6 +233,7 @@ from tkinter import *
 vent = Tk()
 vent.geometry("760x900")
 vent.title(" WALL DESING ")
+vent.iconbitmap('D:\\BIBLIOTECA PERSONAL\\Programación\\Python\\logo-wat.ico')
 
 # Recuadro 1 Datos iniciales
 
@@ -446,7 +447,7 @@ bot2.place(x=195, y=10, width=100, height=20)
 bot3 = Button(rec5, text = 'Guardar .xls', font='Helvetica 8 bold', command=Guardar); bot3.pack()
 bot3.place(x=342.5, y=10, width=100, height=20)
 
-label = Label(vent, text = "IEB - Diseños civiles - Obras Especiales - 2023 w.a.t. ", font='Arial 7'); label.pack()
+label = Label(vent, text = "wilson.taimalc@gmail.com - 2023", font='Arial 7'); label.pack()
 label.place(x=135, y=885, width=490, height=10)
 
 vent.mainloop()
