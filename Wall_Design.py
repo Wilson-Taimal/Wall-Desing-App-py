@@ -24,8 +24,8 @@ def Calcular():
     Nbh = float (c3ent08.get())
 
     # Datos iniciales diseño cortante simple
-    Vuy = float (c6ent05.get())
-    Vux = float (c6ent06.get())
+    Vuy = float (c6ent05.get()); print("Vuy= %.2f" %Vuy)
+    Vux = float (c6ent06.get()); print("Vux = %.2f" %Vux)
  
     # Acero minimo
     Asminv = f_Asmin(pminv, b, h); print("Asmin = %.2f" %Asminv)
@@ -177,13 +177,13 @@ def Guardar():
     print(''); print('Diseño a cortante')
 
     Vcv = f_Vc(fiv, fc, b, d);                   sheet['C37'] = "%.1f" %Vcv                  
-    ChVcv = f_ChVc(Vux,Vcv);                     sheet['C38'] = ChVcv 
+    ChVcv = f_ChVc(Vuy,Vcv);                     sheet['C38'] = ChVcv
 
     Vch = f_Vc(fiv, fc, b, d);                   sheet['D37'] = "%.1f" %Vch 
     ChVch = f_ChVc(Vux,Vch);                     sheet['D38'] = ChVch 
     
 
-    book.save ('D:\IEB_REPORTES\Wall Design.xlsx')
+    book.save ('D:\APP_REPORTES\Wall Design.xlsx')
 
 # Funcion borrar datos
 def Borrar ():
@@ -261,7 +261,7 @@ c1tex05 = Label(rec1, text = "r. Recubrimiento _ cm");              c1tex05.pack
 c1tex05.place(x=10, y=130, width=210, height=20)
 c1ent05 = Entry(rec1, justify=CENTER);                              c1ent05.place(x=230, y=130, width=80, height=20)
 
-c1tex06 = Label(rec1, text = "øv. Coeficiente de fricción.");       c1tex06.pack()
+c1tex06 = Label(rec1, text = "øv. Reducción de resistencia cortante.");       c1tex06.pack()
 c1tex06.place(x=10, y=160, width=210, height=20)
 c1ent06 = Entry(rec1, justify=CENTER);                              c1ent06.place(x=230, y=160, width=80, height=20)
 
@@ -451,4 +451,3 @@ label = Label(vent, text = "wilson.taimalc@gmail.com - 2023", font='Arial 7'); l
 label.place(x=135, y=885, width=490, height=10)
 
 vent.mainloop()
-

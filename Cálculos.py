@@ -1,14 +1,14 @@
 from Ecuaciones import *
 
 # Materiales
-fc = 28
+fc = 21
 fy = 420
 b = 100
 h = 30
 fiv = 0.75
-pminv =  0.0015
+pminv =  0.0012
 pminh =  0.0015
-r = 7.5
+r = 5
 d = h-r
 
 # Datos iniciales refuerzo vertical
@@ -22,8 +22,8 @@ Mnx = 3041
 Nbh = 4
 
 # Datos iniciales diseño cortante simple
-Vux = 115
-Vuy = 95
+Vux = 158
+Vuy = 157
 
 # Acero minimo
 Asminv = f_Asmin(pminv, b, h); print("Asmin = %.2f" %Asminv)
@@ -61,7 +61,7 @@ ChMnh = f_ChMn(Muh,Mnh);                  print(' Chequeo Mn =', ChMnh)
 print(''); print('Diseño a cortante')
 
 Vcv = f_Vc(fiv, fc, b, d);                  print(" Vcv = %.1f" %Vcv)
-ChVcv = f_ChVc(Vux,Vcv);                    print(' Chequeo cortante = ', ChVcv)
+ChVcv = f_ChVc(Vuy,Vcv);                    print(' Chequeo cortante = ', ChVcv)
 
 Vch = f_Vc(fiv, fc, b, d);                  print(" Vch = %.1f" %Vch)
 ChVch = f_ChVc(Vux,Vch);                    print(' Chequeo cortante = ', ChVch)
